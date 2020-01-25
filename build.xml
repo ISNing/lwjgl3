@@ -1099,6 +1099,7 @@
 
             <!-- Bundle javadoc -->
             <!-- This is slow, use -Djavadoc.skip=true for fast local builds -->
+            <!--
             <mkdir dir="${release}/${module}/javadoc" unless:set="javadoc.skip"/>
             <javadoc
                 destdir="${release}/${module}/javadoc"
@@ -1126,7 +1127,8 @@
                 <fileset dir="${module.lwjgl}/@{name}/src/generated/java" includes="**"/>
 
                 <arg value="-XDignore.symbol.file"/> <!-- Suppresses internal API (e.g. Unsafe) usage warnings -->
-
+				-->
+				<!--
                 <arg line="-Xdoclint:html,reference,syntax"/>
                 <arg line="-Xmaxerrs 1000 -Xmaxwarns 1000"/>
                 <arg line="-notimestamp"/>
@@ -1143,8 +1145,11 @@
             </java>
             <zip destfile="${release}/${module}/${module}-javadoc.jar" basedir="${release}/${module}/javadoc" includes="**" level="9" unless:set="javadoc.skip"/>
             <delete dir="${release}/${module}/javadoc" unless:set="javadoc.skip"/>
-
+			
+			-->
+			
             <!-- Bundle source -->
+            <!--
             <quiet>
                 <copy
                     file ="${module.lwjgl}/@{name}/src/main/resources/module-info.java"
@@ -1157,6 +1162,8 @@
                 <fileset dir="${module.lwjgl}/@{name}/src/main/java" includes="**" if:set="hasMain"/>
                 <fileset dir="${module.lwjgl}/@{name}/src/generated/java" includes="**"/>
             </jar>
+            -->
+            
             <quiet>
                 <delete dir="${module.lwjgl}/@{name}/src/generated/java/META-INF" quiet="true"/>
             </quiet>

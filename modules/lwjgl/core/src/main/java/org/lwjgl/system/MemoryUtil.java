@@ -1876,6 +1876,11 @@ public final class MemoryUtil {
         MultiReleaseMemCopy.copy(src, dst, bytes);
     }
 
+    // PATCH:Boardwalk: add removed memCopy with int bytes.
+    public static void memCopy(long src, long dst, int bytes) {
+        memCopy(src, dst, (long)bytes);
+    }
+
     static void memCopyAligned64(long src, long dst, int bytes) {
         int i = 0;
 

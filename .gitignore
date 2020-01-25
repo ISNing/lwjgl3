@@ -20,3 +20,12 @@
 *.wav
 *.zip
 touch.txt
+/android_build/dyncall-1.1
+/android_build/dyncall-1.1.tar.gz
+/android_build/obj
+local.properties
+/modules/core/src/generated
+/android_build/jni/armeabi-v7a
+/android_build/jni/arm64-v8a
+/android_build/jni/x86
+/android_build/jni/x86_64
